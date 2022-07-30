@@ -1,23 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [input, setInput] = useState("");
+
+  const [todo, setTodo] = useState([
+    {
+      name: "Task 1",
+      completed: false,
+    },
+  ]);
+
+  const handleChange = (e) => {
+    console.log(e.target.value);
+    setInput(e.target.value);
+  };
+
+  const addTask = () => {
+    setTodo([
+      ...todo,
+      {
+        name: input,
+        completed: false,
+      },
+    ]);
+    setInput("");
+  };
+
+  const removeTask = (index) => {
+    let newList = todo.filter((i, taskIndex) => {
+      return taskIndex !== index;
+    });
+    setTodo(newList);
+    console.log("newList", newList);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>TODOs</h1>
+
+      <input placeholder="Todo" value={input} onChange={handleChange} />
+      <button onClick={addTask}>Add</button>
+      <ul>
+        {todo.map((i, index) => (
+          <li>
+            {i.name}
+
+            <p onClick={() => removeTask(index)}>
+              <b>Remove</b>
+            </p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
