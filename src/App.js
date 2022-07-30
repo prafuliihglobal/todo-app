@@ -46,7 +46,7 @@ function App() {
         {todo.map((i, index) => (
           <li>
             {i.name}
-
+            something ha changed
             <p onClick={() => removeTask(index)}>
               <b>Remove</b>
             </p>
