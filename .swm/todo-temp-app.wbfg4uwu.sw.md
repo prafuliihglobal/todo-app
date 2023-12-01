@@ -17,9 +17,12 @@ section Another
 Task in sec :2014-01-12 , 12d
 another task : 24d
 
-
 ```
-<!--MCONTENT {content: "gantt<br/>\ntitle A Gantt Diagram<br/>\ndateFormat YYYY-MM-DD<br/>\nsection Section<br/>\nA task :a1, 2014-01-01, 30d<br/>\nAnother task :after a1 , 20d<br/>\nsection Another<br/>\nTask in sec :2014-01-12 , 12d<br/>\nanother task : 24d<br/>\n\n<br/>"} --->
+<!--MCONTENT {content: "gantt<br/>\ntitle A Gantt Diagram<br/>\ndateFormat YYYY-MM-DD<br/>\nsection Section<br/>\nA task :a1, 2014-01-01, 30d<br/>\nAnother task :after a1 , 20d<br/>\nsection Another<br/>\nTask in sec :2014-01-12 , 12d<br/>\nanother task : 24d<br/>\n<br/>"} --->
+
+<br/>
+
+## This is heading
 
 <br/>
 
